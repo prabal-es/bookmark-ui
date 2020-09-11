@@ -1,0 +1,15 @@
+<div class="row mt-2">
+    <div class="col-2">col-2</div>
+    <main class="col-10">
+        <div class="col-sm-12" *ngIf="companyDetail">
+            <div class="card" >
+                
+                <div class="card-body">
+                    <h5 class="card-title">{{ companyDetail.name }}</h5>
+                    <p class="card-text" title="{{ companyDetail.description }}">{{ companyDetail.description }}</p>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Company } from '../models/company';
+import { Company, CompanyData } from '../models/company';
 
 @Injectable()
 export class CompanyService {
@@ -15,5 +15,9 @@ export class CompanyService {
     }
     getCompanies(): Observable<Company>{
         return this.http.get<Company>(this.COMPANY);
+    }
+
+    getCompaniesDetails(uuid: string): Observable<CompanyData>{
+        return this.http.get<CompanyData>(this.COMPANY + '/' + uuid);
     }
 }
