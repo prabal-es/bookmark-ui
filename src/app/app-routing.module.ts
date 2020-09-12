@@ -5,9 +5,9 @@ import { CompanyDetailsComponent } from './company-details/company-details.compo
 
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent},
+  {path: 'companies', component: HomeComponent},
   {path: 'companies/:uuid', component: CompanyDetailsComponent},
-  {path: '**', redirectTo: 'home'}
+  {path: '**', redirectTo: 'companies'}
 ];
 
 @NgModule({

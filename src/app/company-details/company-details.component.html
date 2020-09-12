@@ -1,13 +1,31 @@
 <div class="row mt-2">
-    <div class="col-2">col-2</div>
+    <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+        <nav class="bd-links">
+            <div class="bd-toc-item active bd-sidenav-active">
+                <a class="bd-toc-link" href="/docs/4.1/getting-started/introduction/">
+                    Details
+                </a>
+            </div>
+            <div class="bd-toc-item ">
+                <a class="bd-toc-link" href="/docs/4.1/getting-started/introduction/">
+                    Users
+                </a>
+            </div>
+            <div class="bd-toc-item">
+                <a class="bd-toc-link" href="/docs/4.1/getting-started/introduction/">
+                    Card collections
+                </a>
+            </div>
+
+        </nav>
+    </div>
     <main class="col-10">
         <div class="col-sm-12" *ngIf="companyDetail">
-            <div class="card" >
-                
+            <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">{{ companyDetail.name }}</h5>
                     <p class="card-text" title="{{ companyDetail.description }}">{{ companyDetail.description }}</p>
-                    
+
                 </div>
             </div>
         </div>

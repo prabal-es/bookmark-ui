@@ -1,20 +1,19 @@
 <div class="row mt-2">
-    <div class="col-2">col-4</div>
-    <main class="col-10">
+    <main class="col-12">
         <div class="card-columns" *ngIf="companies">
             <div class="card" *ngFor="let company of companies.data">
                 <img class="card-img-top"
-                    src="https://arizent.brightspotcdn.com/1e/0d/50f4d8ae48c2bf67891ffd56fe05/societe-generale-bl-080415.jpg"
+                    src="{{company.img}}"
                     alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">{{ company.name }}</h5>
                     <p class="card-text" style="display: block;
                     display: -webkit-box;
-                    -webkit-line-clamp: 4;
+                    -webkit-line-clamp: 3;
                     -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;" title="{{ company.description }}">{{ company.description }}</p>
-                    <a [routerLink]="['/companies', company.uuid]" class="btn btn-primary">Details</a>
+                    <a [routerLink]="['/companies', company.uuid]" [ngClass]="{'disabled': !company.active}" class="btn btn-primary">Details</a>
                 </div>
             </div>
         </div>
