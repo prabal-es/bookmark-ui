@@ -19,13 +19,22 @@
 
         </nav>
     </div>
-    <main class="col-10">
-        <div class="col-sm-12" *ngIf="companyDetail">
+    <main class="col-12 col-md-3 col-xl-10">
+        <div *ngIf="companyDetail">
             <div class="card">
+
                 <div class="card-body">
                     <h5 class="card-title">{{ companyDetail.name }}</h5>
-                    <p class="card-text" title="{{ companyDetail.description }}">{{ companyDetail.description }}</p>
-
+                    <div class="col-sm-6 float-left">
+                        <p class="card-text" title="{{ companyDetail.description }}">
+                            {{ companyDetail.description }}
+                        </p>
+                        <div><b>Site URL:</b> <a href="{{ companyDetail.url }}" target="_blank"> {{ companyDetail.url }}
+                            </a></div>
+                        <div><b>User Count:</b> {{ companyDetail.userCount }}</div>
+                    </div>
+                    <img class="col-sm-6 float-right" style="border-radius: 2.25rem;" src="{{companyDetail.img}}"
+                        alt="Card image cap">
                 </div>
             </div>
         </div>

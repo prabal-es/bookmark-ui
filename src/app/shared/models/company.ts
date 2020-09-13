@@ -4,7 +4,8 @@ export class CompanyData {
     description: string;
     img: string;
     url: string;
-    active: true;
+    active: boolean;
+    userCount: number;
 }
 
 export class Company {
