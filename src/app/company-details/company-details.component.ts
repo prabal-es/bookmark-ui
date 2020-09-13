@@ -4,6 +4,7 @@ import { Subscription, throwError } from 'rxjs';
 import { CompanyService } from '../shared/services/company.service';
 import { CompanyData } from '../shared/models/company';
 import { map, catchError } from 'rxjs/operators';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-company-details',
@@ -14,7 +15,9 @@ export class CompanyDetailsComponent implements OnInit, OnDestroy {
   uuid: string;
   private subscribe: Subscription;
   companyDetail: CompanyData;
-  constructor(private readonly route: ActivatedRoute, private readonly companyService: CompanyService) { }
+  constructor(private readonly route: ActivatedRoute,
+              private readonly companyService: CompanyService,
+              private readonly spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
     this.subscribe = this.route.params.subscribe(params => {
@@ -28,15 +31,17 @@ export class CompanyDetailsComponent implements OnInit, OnDestroy {
   }
 
   getCompaniesDetails(): void {
+    this.spinner.show();
     this.companyService.getCompaniesDetails(this.uuid).
     pipe(
       map((data: CompanyData) => {
+        this.spinner.hide();
         return data;
       }), catchError(error => {
+        this.spinner.hide();
         return throwError('Something went wrong!');
       })
     ).subscribe((data: CompanyData) => {
-      console.log(data);
       this.companyDetail = data;
     });
   }

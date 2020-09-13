@@ -7,25 +7,25 @@
                 </a>
             </div>
             <div class="bd-toc-item ">
-                <a class="bd-toc-link" href="/docs/4.1/getting-started/introduction/">
+                <a class="bd-toc-link" [routerLink]="['/companies/', uuid, 'users']">
                     Users
                 </a>
             </div>
             <div class="bd-toc-item">
                 <a class="bd-toc-link" href="/docs/4.1/getting-started/introduction/">
-                    Card collections
+                    Groups
                 </a>
             </div>
 
         </nav>
     </div>
-    <main class="col-12 col-md-3 col-xl-10">
+    <main class="col-12 col-md-9 col-xl-10">
         <div *ngIf="companyDetail">
-            <div class="card">
+            <div class="card mt-2 mb-2">
 
                 <div class="card-body">
                     <h5 class="card-title">{{ companyDetail.name }}</h5>
-                    <div class="col-sm-6 float-left">
+                    <div class="col-sm-6 float-left pl-0">
                         <p class="card-text" title="{{ companyDetail.description }}">
                             {{ companyDetail.description }}
                         </p>

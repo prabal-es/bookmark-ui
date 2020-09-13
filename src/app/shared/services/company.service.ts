@@ -4,6 +4,7 @@ import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Company, CompanyData } from '../models/company';
+import { User } from '../models/user';
 
 @Injectable()
 export class CompanyService {
@@ -19,5 +20,9 @@ export class CompanyService {
 
     getCompaniesDetails(uuid: string): Observable<CompanyData>{
         return this.http.get<CompanyData>(this.COMPANY + '/' + uuid);
+    }
+
+    getCompaniesUsers(uuid: string): Observable<User>{
+        return this.http.get<User>(this.COMPANY + '/' + uuid + '/users');
     }
 }

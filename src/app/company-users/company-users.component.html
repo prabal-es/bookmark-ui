@@ -1,0 +1,46 @@
+<div class="row mt-2">
+    <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+        <nav class="bd-links">
+            <div class="bd-toc-item">
+                <a class="bd-toc-link" [routerLink]="['/companies/', uuid]">
+                    Details
+                </a>
+            </div>
+            <div class="bd-toc-item active bd-sidenav-active">
+                <a class="bd-toc-link" [routerLink]="['/companies/', uuid, 'users']">
+                    Users
+                </a>
+            </div>
+            <div class="bd-toc-item">
+                <a class="bd-toc-link" href="/docs/4.1/getting-started/introduction/">
+                    Groups
+                </a>
+            </div>
+
+        </nav>
+    </div>
+    <main class="col-12 col-md-9 col-xl-10">
+        <div>
+            <div class="row card-columns" style="column-gap: 0" *ngIf="companyUser">
+                <div class="col-md-6 col-xl-4" *ngFor="let user of companyUser.data">
+                    <div class="card mt-2 mb-2">
+                        <div class="card-body">
+                            <img class="col-sm-12 rounded-circle"
+                                style="height: 175px; width: 209px; display: block; margin-left: auto;margin-right: auto;"
+                                src="{{user.img}}" alt="Card image cap">
+                            <h5 class="card-title" style="text-align: center; margin-top: 15px;"><a href="{{user.url}}"
+                                    target="_blank">{{user.name}}</a>
+                            </h5>
+                            <div style="text-align: center; font-weight: 600;">Admin: <label class="switch">
+                                    <input type="checkbox" [checked]="user.role == 'ADMIN'"
+                                        (click)="onRoleChange($event, user.uuid);">
+                                    <span class="slider round"></span>
+                                </label> </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
