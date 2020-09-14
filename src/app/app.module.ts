@@ -11,6 +11,10 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { CompanyGroupsComponent } from './company-groups/company-groups.component';
 import { CompanyComponent } from './company/company.component';
 import { HomeComponent } from './home/home.component';
+import { SimpleModalModule } from 'ngx-simple-modal';
+import { CommonModule } from '@angular/common';
+import { LoginComponent } from './shared/popups/login.component';
+import { LoginService } from './shared/services/login.service';
 
 @NgModule({
   declarations: [
@@ -19,16 +23,19 @@ import { HomeComponent } from './home/home.component';
     CompanyDetailsComponent,
     CompanyUsersComponent,
     CompanyGroupsComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     NgxSpinnerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CommonModule,
+    SimpleModalModule.forRoot({container: 'modal-container'})
   ],
-  providers: [CompanyService],
+  providers: [CompanyService, LoginService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: ':urlContext', component: CompanyComponent},
   {path: 'companies', component: CompanyComponent},
   {path: 'companies/:urlContext', component: CompanyDetailsComponent},
   {path: 'companies/:urlContext/users', component: CompanyUsersComponent},

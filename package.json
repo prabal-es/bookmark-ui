@@ -23,6 +23,7 @@
     "bootstrap": "^4.5.2",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
+    "ngx-simple-modal": "^1.4.13",
     "ngx-spinner": "^10.0.1",
     "path": "^0.12.7",
     "rxjs": "~6.5.4",
