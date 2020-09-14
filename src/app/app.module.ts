@@ -10,6 +10,7 @@ import { CompanyUsersComponent } from './company-users/company-users.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CompanyGroupsComponent } from './company-groups/company-groups.component';
 import { CompanyComponent } from './company/company.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CompanyComponent } from './company/company.component';
     CompanyComponent,
     CompanyDetailsComponent,
     CompanyUsersComponent,
-    CompanyGroupsComponent
+    CompanyGroupsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
