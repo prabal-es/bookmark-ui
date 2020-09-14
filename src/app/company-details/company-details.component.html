@@ -2,21 +2,20 @@
     <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
         <nav class="bd-links">
             <div class="bd-toc-item active bd-sidenav-active">
-                <a class="bd-toc-link" href="/docs/4.1/getting-started/introduction/">
+                <a class="bd-toc-link" [routerLink]="['/companies/', urlContext]">
                     Details
                 </a>
             </div>
             <div class="bd-toc-item ">
-                <a class="bd-toc-link" [routerLink]="['/companies/', uuid, 'users']">
+                <a class="bd-toc-link" [routerLink]="['/companies/', urlContext, 'users']">
                     Users
                 </a>
             </div>
             <div class="bd-toc-item">
-                <a class="bd-toc-link" href="/docs/4.1/getting-started/introduction/">
+                <a class="bd-toc-link" [routerLink]="['/companies/', urlContext, 'groups']">
                     Groups
                 </a>
             </div>
-
         </nav>
     </div>
     <main class="col-12 col-md-9 col-xl-10">
@@ -32,6 +31,7 @@
                         <div><b>Site URL:</b> <a href="{{ companyDetail.url }}" target="_blank"> {{ companyDetail.url }}
                             </a></div>
                         <div><b>User Count:</b> {{ companyDetail.userCount }}</div>
+                        <div><b>Group Count:</b> {{ companyDetail.groupCount }}</div>
                     </div>
                     <img class="col-sm-6 float-right" style="border-radius: 2.25rem;" src="{{companyDetail.img}}"
                         alt="Card image cap">

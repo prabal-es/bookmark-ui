@@ -7,10 +7,10 @@ import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  templateUrl: './company.component.html',
+  styleUrls: ['./company.component.css']
 })
-export class HomeComponent implements OnInit {
+export class CompanyComponent implements OnInit {
 
   companies: Company;
 

@@ -3,19 +3,21 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CompanyService } from './shared/services/company.service';
 import { CompanyDetailsComponent } from './company-details/company-details.component';
 import { CompanyUsersComponent } from './company-users/company-users.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { CompanyGroupsComponent } from './company-groups/company-groups.component';
+import { CompanyComponent } from './company/company.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    CompanyComponent,
     CompanyDetailsComponent,
-    CompanyUsersComponent
+    CompanyUsersComponent,
+    CompanyGroupsComponent
   ],
   imports: [
     BrowserModule,

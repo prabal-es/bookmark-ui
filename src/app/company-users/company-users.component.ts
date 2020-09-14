@@ -13,7 +13,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./company-users.component.css']
 })
 export class CompanyUsersComponent implements OnInit, OnDestroy {
-  uuid: string;
+  urlContext: string;
   private subscribe: Subscription;
   companyUser: User;
   constructor(private readonly route: ActivatedRoute,
@@ -22,7 +22,7 @@ export class CompanyUsersComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscribe = this.route.params.subscribe(params => {
-      this.uuid = params.uuid;
+      this.urlContext = params.urlContext;
       this.getCompaniesUsers();
    });
   }
@@ -33,7 +33,7 @@ export class CompanyUsersComponent implements OnInit, OnDestroy {
 
   getCompaniesUsers(): void {
     this.spinner.show();
-    this.companyService.getCompaniesUsers(this.uuid).
+    this.companyService.getCompaniesUsers(this.urlContext).
     pipe(
       map((data: User) => {
         this.spinner.hide();

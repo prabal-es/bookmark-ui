@@ -2,9 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Company, CompanyData } from '../models/company';
 import { User } from '../models/user';
+import { Group } from '../models/group';
 
 @Injectable()
 export class CompanyService {
@@ -18,11 +18,15 @@ export class CompanyService {
         return this.http.get<Company>(this.COMPANY);
     }
 
-    getCompaniesDetails(uuid: string): Observable<CompanyData>{
-        return this.http.get<CompanyData>(this.COMPANY + '/' + uuid);
+    getCompaniesDetails(urlContext: string): Observable<CompanyData>{
+        return this.http.get<CompanyData>(this.COMPANY + '/' + urlContext);
     }
 
-    getCompaniesUsers(uuid: string): Observable<User>{
-        return this.http.get<User>(this.COMPANY + '/' + uuid + '/users');
+    getCompaniesUsers(urlContext: string): Observable<User>{
+        return this.http.get<User>(this.COMPANY + '/' + urlContext + '/users');
+    }
+
+    getCompaniesGroups(urlContext: string): Observable<Group>{
+        return this.http.get<Group>(this.COMPANY + '/' + urlContext + '/groups');
     }
 }
