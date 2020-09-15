@@ -196,3 +196,10 @@ input:checked + .slider:before {
   background: #3cb0fd;
   text-decoration: none;
 }
+
+#loginCard {
+  cursor: pointer;
+}
+#loginCard:hover{
+  background-color: aliceblue;
+}

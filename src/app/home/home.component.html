@@ -1,4 +1,63 @@
-<div  *ngIf="loginUser">
-{{loginUser.urlContext}}
-</div>
+<div *ngIf="loginUser.urlContext">
+    <div class="row mt-2">
+        <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+            <nav class="bd-links">
+                <div class="bd-toc-item active bd-sidenav-active">
+                    <a class="bd-toc-link" [routerLink]="['/']">
+                        Tiny URL
+                    </a>
+                </div>
+                <div class="bd-toc-item ">
+                    <a class="bd-toc-link" [routerLink]="['/cards']">
+                        Cards
+                    </a>
+                </div>
+                <div class="bd-toc-item">
+                    <a class="bd-toc-link" [routerLink]="['/groups']">
+                        Groups
+                    </a>
+                </div>
+                <div class="bd-toc-item">
+                    <a class="bd-toc-link" [routerLink]="['/company-groups']">
+                        Company Groups
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <main class="col-12 col-md-9 col-xl-10 mt-2">
+            <div class="form-row mb-2">
+                <div class="col-6 col-md-7 col-xl-9">
+                    <input class="form-control form-control-lg"  [(ngModel)]="longUrl" type="text" maxlength="2083" placeholder="Long URL">
+                </div>
+                <div class="col">
+                    <input class="form-control form-control-lg" [(ngModel)]="expireAt" type="text" maxlength="4" max="3000" oninput="this.value=this.value.replace(/[^0-9]/g,'');"  placeholder="Minutes">
+                </div>
+                <div class="col">
+                    <button (click)="generateTiny();" class="btn btn-primary btn-lg" style="line-height: 26px;margin: 0;">Generate </button>
+                </div>
+                
+            </div>
+            <table class="table table-striped" *ngIf="tinyUrls">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tiny URL</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">Created On</th>
+                    <th scope="col">Expire At</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let tinyUrl of tinyUrls.data; index as i;">
+                    <th scope="row">{{i + 1}}</th>
+                    <td>{{tinyUrl.tinyUrl}}</td>
+                    <td>{{tinyUrl.detailUrl}}</td>
+                    <td>{{tinyUrl.createdAt | date:'medium' }}</td>
+                    <td>{{tinyUrl.expireAt| date:'medium' }}</td>
+                  </tr>
+                </tbody>
+              </table>
 
+        </main>
+    </div>
+</div>

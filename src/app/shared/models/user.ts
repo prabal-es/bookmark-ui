@@ -6,6 +6,7 @@ export class UserData {
     img: string;
     url: string;
     active: boolean;
+    companyUrlContext: string;
 }
 
 export class User {

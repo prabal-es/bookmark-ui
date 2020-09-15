@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,11 @@ import { SimpleModalModule } from 'ngx-simple-modal';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './shared/popups/login.component';
 import { LoginService } from './shared/services/login.service';
+import { UserService } from './shared/services/user.service';
+import { UserCardsComponent } from './user-cards/user-cards.component';
+import { UserGroupsComponent } from './user-groups/user-groups.component';
+import { UserCompanyGroupsComponent } from './user-company-groups/user-company-groups.component';
+import { CardService } from './shared/services/card.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,10 @@ import { LoginService } from './shared/services/login.service';
     CompanyUsersComponent,
     CompanyGroupsComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    UserCardsComponent,
+    UserGroupsComponent,
+    UserCompanyGroupsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +42,10 @@ import { LoginService } from './shared/services/login.service';
     NgxSpinnerModule,
     BrowserAnimationsModule,
     CommonModule,
+    FormsModule,
     SimpleModalModule.forRoot({container: 'modal-container'})
   ],
-  providers: [CompanyService, LoginService ],
+  providers: [CompanyService, LoginService, UserService, CardService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
