@@ -27,13 +27,13 @@
         <main class="col-12 col-md-9 col-xl-10 mt-2">
             <div class="form-row mb-2">
                 <div class="col-6 col-md-7 col-xl-9">
-                    <input class="form-control form-control-lg"  [(ngModel)]="longUrl" type="text" maxlength="2083" placeholder="Long URL">
+                    <input title="Long URL." class="form-control form-control-lg"  [(ngModel)]="longUrl" type="text" maxlength="2083" placeholder="Long URL">
                 </div>
                 <div class="col">
-                    <input class="form-control form-control-lg" [(ngModel)]="expireAt" type="text" maxlength="4" max="3000" oninput="this.value=this.value.replace(/[^0-9]/g,'');"  placeholder="Minutes">
+                    <input title="Expire in minutes" class="form-control form-control-lg" [(ngModel)]="expireAt" type="text" maxlength="4" max="3000" oninput="this.value=this.value.replace(/[^0-9]/g,'');"  placeholder="Minutes">
                 </div>
                 <div class="col">
-                    <button (click)="generateTiny();" class="btn btn-primary btn-lg" style="line-height: 26px;margin: 0;">Generate </button>
+                    <button (click)="generateTiny();" class="btn btn-primary btn-lg" style="line-height: 26px;margin: 0;">Generate</button>
                 </div>
                 
             </div>

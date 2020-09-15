@@ -18,11 +18,20 @@ export class CardService {
         });
     }
 
-    createCardsOfTypeTiny(userUrlContext: string, companyUrlContext: string, data: CardData): Observable<CardData> {
+    createCard(userUrlContext: string, companyUrlContext: string, data: CardData): Observable<CardData> {
         return this.http.post<CardData>(this.CARD, data, {
             headers: new HttpHeaders({
                 'company-context': companyUrlContext,
                 'user-context': userUrlContext })
+        });
+    }
+
+    getCardsOfTypeCard(userUrlContext: string, companyUrlContext: string): Observable<Card> {
+        return this.http.get<Card>(this.CARD, {
+            headers: new HttpHeaders({
+                'company-context': companyUrlContext,
+                'user-context': userUrlContext }),
+            params: { type: 'CARD' }
         });
     }
 }

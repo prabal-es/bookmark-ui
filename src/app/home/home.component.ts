@@ -11,6 +11,7 @@ import { UserService } from '../shared/services/user.service';
 import { CardService } from '../shared/services/card.service';
 import { Card, CardData } from '../shared/models/card';
 import Swal from 'sweetalert2';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -81,7 +82,7 @@ export class HomeComponent implements OnInit {
   generateTiny(): void {
     let expireAtTime = this.expireAt;
     if (!expireAtTime) {
-      expireAtTime = 60 * 1000; // 1 min in mili
+      expireAtTime = environment.default_card_expire;
     } else {
       expireAtTime = expireAtTime * 60 * 1000;
     }
@@ -101,7 +102,7 @@ export class HomeComponent implements OnInit {
     reqData.expireAt = expireAtTime;
     reqData.type = 'TINY';
 
-    this.cardService.createCardsOfTypeTiny(
+    this.cardService.createCard(
       this.loginUser.urlContext,
       this.loginUser.companyUrlContext, reqData).
       pipe(

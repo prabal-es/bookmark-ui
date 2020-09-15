@@ -23,7 +23,50 @@
             </div>
         </nav>
     </div>
-    <main class="col-12 col-md-9 col-xl-10">
-        sas Cards {{loginUser.uuid}}
+    <main class="col-12 col-md-9 col-xl-10 mt-2">
+        <div>
+
+            <div class="form-row pb-2" style="border-bottom: 1px solid rgba(0,0,0,.1);"> 
+                <div class="col">
+                    <input title="Long URL." class="form-control"  [(ngModel)]="longUrl" type="text" maxlength="2083" placeholder="Long URL">
+                </div>
+                <div class="col">
+                    <input title="Card title" class="form-control" [(ngModel)]="title" maxlength="50" placeholder="Card title">
+                </div>
+                <div class="col">
+                    <input title="Card Details" class="form-control" [(ngModel)]="details" maxlength="500" placeholder="Card Details">
+                </div>
+                <div class="col">
+                    <input title="Image URL" class="form-control" [(ngModel)]="imgUrl" maxlength="2083" placeholder="Image URL">
+                </div>
+                <div class="col">
+                    <input title="Expire in minutes" class="form-control" [(ngModel)]="expireAt" type="text" maxlength="4" max="3000" oninput="this.value=this.value.replace(/[^0-9]/g,'');"  placeholder="Minutes">
+                </div>
+                <div class="col">
+                    <button (click)="generateCard();" class="btn btn-primary" style="line-height: 18px;margin: 0;">Generate</button>
+                </div>
+                
+            </div>
+
+            <div class="row card-columns" style="column-gap: 0" *ngIf="cards">
+                <div class="col-md-3 col-xl-2" *ngFor="let card of cards.data">
+                    <div (click)="showDetails(card)" class="card mt-2 mb-2" style="cursor: pointer;">
+                        <div class="card-header" style="-webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; display: block; display: -webkit-box; height: 42px; padding: 10px;">
+                            {{card.name}}
+                        </div>
+                        <div class="card-body" style="padding: .4rem;">
+                            <img class="col-sm-12 rounded-circle"
+                                style="height: 100px; width: 145px; display: block; margin-left: auto;margin-right: auto;"
+                                src="{{card.img}}" alt="{{card.name}}">
+                            <div style="padding-top: 5px; font-size: 12px;display: block;display: -webkit-box;-webkit-line-clamp: 3;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;min-height: 54px;" title="{{card.description}}">{{card.description}}</div>
+                        </div>
+                        <div class="card-footer text-muted" style="font-size: 10px; padding: 0.25rem;">
+                            <b>Created On:</b> {{card.createdAt | date:'short' }} <br/>
+                            <b>Expire At:</b> {{card.expireAt| date:'short' }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 </div>
