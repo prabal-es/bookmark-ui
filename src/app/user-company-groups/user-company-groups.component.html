@@ -21,8 +21,8 @@
                     Company Groups
                 </a>
             </div>
-            <div class="bd-toc-item">
-                <a class="bd-toc-link" [routerLink]="['/company-groups']">
+            <div class="bd-toc-item" (click)="todoInfo()" style="cursor: pointer;">
+                <a class="bd-toc-link" >
                     Import/Export
                 </a>
             </div>
@@ -32,7 +32,7 @@
         <div class="row card-columns" style="column-gap: 0" *ngIf="groups">
             <div class="col-md-6 col-xl-4" *ngFor="let group of groups.data">
                 <div class="card mt-2 mb-2">
-                    <div class="card-body">
+                    <div (click)="todoInfo()" style="cursor: pointer;" class="card-body">
                         <img class="col-sm-12 rounded-circle"
                             style="height: 175px; width: 209px; display: block; margin-left: auto;margin-right: auto;"
                             src="{{group.img}}" alt="Card image cap">

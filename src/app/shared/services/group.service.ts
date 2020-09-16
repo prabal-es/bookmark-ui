@@ -23,7 +23,7 @@ export class GroupService {
             headers: new HttpHeaders({
                 'company-context': companyUrlContext,
                 'user-context': userUrlContext }),
-            params: { type: 'OTHER' }
+            params: { type: 'ALL' }
         });
     }
     createGroup(userUrlContext: string, companyUrlContext: string, data: GroupData): Observable<GroupData> {

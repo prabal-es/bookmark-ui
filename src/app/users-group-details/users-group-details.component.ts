@@ -10,6 +10,7 @@ import { map, catchError } from 'rxjs/operators';
 import { AddUserComponent } from '../shared/popups/add-user.component';
 import { SimpleModalService } from 'ngx-simple-modal';
 import { UserService } from '../shared/services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-users-group-details',
@@ -78,4 +79,9 @@ export class UsersGroupDetailsComponent implements OnInit {
       this.group = data;
     });
   }
+
+  todoInfo(): void{
+    Swal.fire('Information', 'This feature is planned in near future.', 'info');
+  }
+
 }

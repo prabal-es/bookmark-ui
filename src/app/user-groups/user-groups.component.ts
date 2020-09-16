@@ -104,4 +104,8 @@ export class UserGroupsComponent implements OnInit {
   showGroupDetails(group: GroupData): void{
     this.router.navigate(['/groups', group.urlContext]);
   }
+
+  todoInfo(): void{
+    Swal.fire('Information', 'This feature is planned in near future.', 'info');
+  }
 }

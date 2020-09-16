@@ -120,4 +120,8 @@ export class UserCardsComponent implements OnInit {
   showDetails(selectedCardData: CardData): void {
     this.simpleModalService.addModal(CardDetailsComponent, { title: selectedCardData.name, cardData: selectedCardData });
   }
+
+  todoInfo(): void{
+    Swal.fire('Information', 'This feature is planned in near future.', 'info');
+  }
 }

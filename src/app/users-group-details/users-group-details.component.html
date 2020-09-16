@@ -17,7 +17,7 @@
                 </a>
                 <ul class="active bd-sidenav-active" style="list-style-type: none;">
                     <li><a [routerLink]="['/groups', urlContext]">
-                        Badge
+                        Details
                       </a></li>
                 </ul>
             </div>
@@ -26,8 +26,8 @@
                     Company Groups
                 </a>
             </div>
-            <div class="bd-toc-item">
-                <a class="bd-toc-link" [routerLink]="['/company-groups']">
+            <div class="bd-toc-item" (click)="todoInfo()" style="cursor: pointer;">
+                <a class="bd-toc-link">
                     Import/Export
                 </a>
             </div>
@@ -49,7 +49,7 @@
                     <button  class="btn btn-primary" (click)="addUser();"  style="line-height: 18px;margin-top: 9px;">Add admin</button>
                 </div>
                 <div class="col col-xl-2" style="max-width: 125px;">
-                    <button  class="btn btn-primary"  style="line-height: 18px;margin-top: 9px;">Add cards</button>
+                    <button  class="btn btn-primary" (click)="todoInfo();"  style="line-height: 18px;margin-top: 9px;">Add cards</button>
                 </div>
             </div>
             <div class="row card-columns" style="column-gap: 0" *ngIf="group">

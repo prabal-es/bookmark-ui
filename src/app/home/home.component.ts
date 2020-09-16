@@ -117,4 +117,8 @@ export class HomeComponent implements OnInit {
         this.tinyUrls.data.push(data);
       });
   }
+
+  todoInfo(): void{
+    Swal.fire('Information', 'This feature is planned in near future.', 'info');
+  }
 }

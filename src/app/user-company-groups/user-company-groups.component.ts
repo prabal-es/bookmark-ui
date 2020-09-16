@@ -8,6 +8,7 @@ import { UserData } from '../shared/models/user';
 import { Group } from '../shared/models/group';
 import { map, catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-user-company-groups',
@@ -50,4 +51,7 @@ export class UserCompanyGroupsComponent implements OnInit {
       });
   }
 
+  todoInfo(): void{
+    Swal.fire('Information', 'This feature is planned in near future.', 'info');
+  }
 }
