@@ -22,6 +22,7 @@ import { UserGroupsComponent } from './user-groups/user-groups.component';
 import { UserCompanyGroupsComponent } from './user-company-groups/user-company-groups.component';
 import { CardService } from './shared/services/card.service';
 import { CardDetailsComponent } from './shared/popups/card-details.component';
+import { GroupService } from './shared/services/group.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,7 @@ import { CardDetailsComponent } from './shared/popups/card-details.component';
     FormsModule,
     SimpleModalModule.forRoot({container: 'modal-container'})
   ],
-  providers: [CompanyService, LoginService, UserService, CardService ],
+  providers: [CompanyService, LoginService, UserService, CardService, GroupService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
