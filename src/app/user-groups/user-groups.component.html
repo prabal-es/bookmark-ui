@@ -32,17 +32,17 @@
         <div>
             <div class="form-row pb-2" style="border-bottom: 1px solid rgba(0,0,0,.1);"> 
                 <div class="col">
-                    <input title="Group title" class="form-control"  maxlength="50" placeholder="Group title">
+                    <input title="Group title" class="form-control" [(ngModel)]="title"  maxlength="50" placeholder="Group title">
                 </div>
                 <div class="col">
-                    <input title="Group Details" class="form-control" maxlength="500" placeholder="Group details">
+                    <input title="Group Details" class="form-control" [(ngModel)]="details" maxlength="500" placeholder="Group details">
                 </div>
                 <div class="col">
-                    <input title="Image URL" class="form-control" maxlength="2083" placeholder="Image URL">
+                    <input title="Image URL" class="form-control" [(ngModel)]="imgUrl" maxlength="2083" placeholder="Image URL">
                 </div>
 
                 <div class="col">
-                    <button  class="btn btn-primary" style="line-height: 18px;margin: 0;">Create</button>
+                    <button  class="btn btn-primary" (click)="generateGroup();" style="line-height: 18px;margin: 0;">Create</button>
                 </div>
             </div>
             <div class="row card-columns" style="column-gap: 0" *ngIf="groups">

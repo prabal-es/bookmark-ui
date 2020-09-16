@@ -3,7 +3,7 @@ import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Card, CardData } from '../models/card';
-import { Group } from '../models/group';
+import { Group, GroupData } from '../models/group';
 
 @Injectable()
 export class GroupService {
@@ -26,8 +26,8 @@ export class GroupService {
             params: { type: 'OTHER' }
         });
     }
-    createCard(userUrlContext: string, companyUrlContext: string, data: CardData): Observable<CardData> {
-        return this.http.post<CardData>(this.GROUP, data, {
+    createGroup(userUrlContext: string, companyUrlContext: string, data: GroupData): Observable<GroupData> {
+        return this.http.post<GroupData>(this.GROUP, data, {
             headers: new HttpHeaders({
                 'company-context': companyUrlContext,
                 'user-context': userUrlContext })
