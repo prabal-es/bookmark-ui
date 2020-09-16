@@ -1,0 +1,61 @@
+<div class="row mt-2">
+    <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+        <nav class="bd-links">
+            <div class="bd-toc-item">
+                <a class="bd-toc-link" [routerLink]="['/']">
+                    Tiny URL
+                </a>
+            </div>
+            <div class="bd-toc-item ">
+                <a class="bd-toc-link" [routerLink]="['/cards']">
+                    Cards
+                </a>
+            </div>
+            <div class="bd-toc-item ">
+                <a class="bd-toc-link" [routerLink]="['/groups']">
+                    Groups
+                </a>
+                <ul class="active bd-sidenav-active" style="list-style-type: none;">
+                    <li><a [routerLink]="['/groups', urlContext]">
+                        Badge
+                      </a></li>
+                </ul>
+            </div>
+            <div class="bd-toc-item ">
+                <a class="bd-toc-link" [routerLink]="['/company-groups']">
+                    Company Groups
+                </a>
+            </div>
+            <div class="bd-toc-item">
+                <a class="bd-toc-link" [routerLink]="['/company-groups']">
+                    Import/Export
+                </a>
+            </div>
+        </nav>
+    </div>
+    <main class="col-12 col-md-9 col-xl-10 mt-2">
+        <div>
+            <div class="form-row pb-2" style="border-bottom: 1px solid rgba(0,0,0,.1);" *ngIf="group"> 
+                <div class="col col-md-2 col-xl-1">
+                    <img class="rounded-circle" style="height: 72px; width: 90px; display: block; padding: 0; margin: 0;" src="{{group.img}}" />
+                </div>
+                <div class="col col-xl-2" style="padding-top: 18px;">
+                    <b>{{group.name}}</b>
+                </div>
+                <div class="col col-xl-6" style="padding-top: 18px;">
+                    {{group.description}}
+                </div>
+                <div class="col col-xl-2" style="max-width: 128px;">
+                    <button  class="btn btn-primary" (click)="addUser();"  style="line-height: 18px;margin-top: 9px;">Add admin</button>
+                </div>
+                <div class="col col-xl-2" style="max-width: 125px;">
+                    <button  class="btn btn-primary"  style="line-height: 18px;margin-top: 9px;">Add cards</button>
+                </div>
+            </div>
+            <div class="row card-columns" style="column-gap: 0" *ngIf="group">
+
+
+            </div>
+        </div>
+    </main>
+</div>

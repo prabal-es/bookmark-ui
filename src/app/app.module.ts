@@ -23,6 +23,8 @@ import { UserCompanyGroupsComponent } from './user-company-groups/user-company-g
 import { CardService } from './shared/services/card.service';
 import { CardDetailsComponent } from './shared/popups/card-details.component';
 import { GroupService } from './shared/services/group.service';
+import { UsersGroupDetailsComponent } from './users-group-details/users-group-details.component';
+import { AddUserComponent } from './shared/popups/add-user.component';
 
 @NgModule({
   declarations: [
@@ -33,10 +35,12 @@ import { GroupService } from './shared/services/group.service';
     CompanyGroupsComponent,
     HomeComponent,
     LoginComponent,
+    AddUserComponent,
     CardDetailsComponent,
     UserCardsComponent,
     UserGroupsComponent,
-    UserCompanyGroupsComponent
+    UserCompanyGroupsComponent,
+    UsersGroupDetailsComponent
   ],
   imports: [
     BrowserModule,

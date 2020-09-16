@@ -8,12 +8,14 @@ import { HomeComponent } from './home/home.component';
 import { UserCardsComponent } from './user-cards/user-cards.component';
 import { UserGroupsComponent } from './user-groups/user-groups.component';
 import { UserCompanyGroupsComponent } from './user-company-groups/user-company-groups.component';
+import { UsersGroupDetailsComponent } from './users-group-details/users-group-details.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: 'cards', component: UserCardsComponent},
   {path: 'groups', component: UserGroupsComponent},
+  {path: 'groups/:urlContext', component: UsersGroupDetailsComponent},
   {path: 'company-groups', component: UserCompanyGroupsComponent},
   {path: 'companies', component: CompanyComponent},
   {path: 'companies/:urlContext', component: CompanyDetailsComponent},

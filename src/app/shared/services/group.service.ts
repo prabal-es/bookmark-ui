@@ -42,4 +42,12 @@ export class GroupService {
             params: { type: 'CARD' }
         });
     }
+
+    getGroupDetails(urlContext: string): Observable<GroupData>{
+        return this.http.get<GroupData>(this.GROUP + '/' + urlContext);
+    }
+
+    updateGroupAdmins(urlContext: string, adminIds: string[]): Observable<GroupData>{
+        return this.http.post<GroupData>(this.GROUP + '/' + urlContext + '/users', adminIds);
+    }
 }

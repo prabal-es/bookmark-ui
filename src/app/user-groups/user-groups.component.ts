@@ -27,8 +27,7 @@ export class UserGroupsComponent implements OnInit {
   constructor(private readonly loginService: LoginService,
               private readonly router: Router,
               private readonly spinner: NgxSpinnerService,
-              private readonly groupService: GroupService,
-              private readonly simpleModalService: SimpleModalService) { }
+              private readonly groupService: GroupService) { }
 
   ngOnInit(): void {
     this.loginService.currentUser.subscribe(loginUser => {
@@ -100,6 +99,9 @@ export class UserGroupsComponent implements OnInit {
       ).subscribe((data: GroupData) => {
         this.groups.data.push(data);
       });
+  }
 
+  showGroupDetails(group: GroupData): void{
+    this.router.navigate(['/groups', group.urlContext]);
   }
 }
