@@ -1,205 +1,185 @@
 .bd-sidebar {
-  border-right: 1px solid rgba(0,0,0,.1);
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  border-right: 1px solid rgba(0, 0, 0, .1);
+  border-top: 1px solid rgba(0, 0, 0, .1);
   -ms-flex-order: 0;
-    order: 0;
-    border-top: 1px solid rgba(0,0,0,.1);
-    border-bottom: 1px solid rgba(0,0,0,.1);
+  order: 0;
 }
 .bd-toc-link {
+  color: rgba(0, 0, 0, .65);
   display: block;
-  padding: .25rem 1.5rem;
   font-weight: 500;
-  color: rgba(0,0,0,.65);
+  padding: .25rem 1.5rem;
 }
 .bd-links {
-    max-height: calc(100vh - 9rem);
-    overflow-y: auto;
+  max-height: calc(100vh - 9rem);
+  overflow-y: auto;
 }
 .bd-links {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  margin-right: -15px;
   margin-left: -15px;
+  margin-right: -15px;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 .bd-toc-item.active:not(:first-child) {
   margin-top: 1rem;
 }
 .bd-toc-item.active {
-  margin-bottom: 1rem;
   background-color: gainsboro;
+  margin-bottom: 1rem;
 }
 .bd-toc-item.active>.bd-toc-link {
   color: black;
 }
 .bd-toc-link {
-  display: block;
-  padding: .25rem 1.5rem;
-  font-weight: 500;
   color: rgba(73, 71, 71, 0.65);
+  display: block;
+  font-weight: 500;
+  padding: .25rem 1.5rem;
 }
-a:hover{
+a:hover {
   text-decoration: none;
 }
-
 .switch {
-  position: relative;
   display: inline-block;
-  width: 40px;
   height: 10px;
   line-height: 5px;
+  position: relative;
+  width: 40px;
 }
-
-.switch input { 
+.switch input {
+  height: 0;
   opacity: 0;
   width: 0;
-  height: 0;
 }
-
 .slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
   position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+  -webkit-transition: .4s;
+}
+.slider:before {
+  background-color: white;
+  bottom: 1px;
   content: "";
   height: 8px;
-  width: 8px;
   left: 4px;
-  bottom: 1px;
-  background-color: white;
-  -webkit-transition: .5s;
+  position: absolute;
   transition: .5s;
+  -webkit-transition: .5s;
+  width: 8px;
 }
-
-input:checked + .slider {
+input:checked+.slider {
   background-color: #2196F3;
 }
-
-input:focus + .slider {
+input:focus+.slider {
   box-shadow: 0 0 1px #2196F3;
 }
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(22px);
+input:checked+.slider:before {
   -ms-transform: translateX(22px);
   transform: translateX(22px);
+  -webkit-transform: translateX(22px);
 }
-
-/* Rounded sliders */
 .slider.round {
   border-radius: 34px;
 }
-
 .slider.round:before {
   border-radius: 50%;
 }
-
-.modal{
-  background-color:rgba(0,0,0,.4);
-  bottom:0;
-  height:100%;
-  left:0;
+.modal {
+  background-color: rgba(0, 0, 0, .4);
+  bottom: 0;
+  height: 100%;
+  left: 0;
   overflow: hidden;
   padding: 0 16px;
   position: fixed;
   right: 0;
-  top: 0;
   text-align: center;
-  z-index: 10; /* Adjust according to your needs */
+  top: 0;
+  z-index: 10;
 }
-
 .modal.fade-anim {
+  opacity: 0;
   transition: opacity 400ms ease-in-out;
   will-change: opacity;
-  opacity: 0;
 }
-
 .modal.fade-anim.in {
   opacity: 1;
 }
-
 .modal-open {
   overflow: hidden;
 }
-
 .modal-content {
-  background-color:#ffffff;
+  background-color: #ffffff;
   border-radius: 4px;
+  display: inline-block;
   margin: 16px auto;
   max-width: 580px;
   position: relative;
+  text-align: left;
   transition: opacity 400ms ease-in-out;
   width: 100%;
   will-change: opacity;
-  display: inline-block;
-  text-align: left;
 }
-
 .modal-content-size-m {
   max-width: 992px;
 }
-
 .modal-content-size-l {
   max-width: 1200px;
 }
-
-.modal-footer,
-.modal-header {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+.modal-footer, .modal-header {
   align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 56px;
+  -ms-flex-align: center;
   padding: 0 16px;
+  -webkit-box-align: center;
 }
-
 .modal-header {
-  border-bottom:1px solid #cecece;
+  border-bottom: 1px solid #cecece;
 }
-
 .modal-body {
   padding: 16px;
 }
-
 .modal-footer {
-  border-top:1px solid #cecece;
+  border-top: 1px solid #cecece;
 }
-
-
-
-/* Some button basic styles because i don't want BS in this demo */
 .btn {
-  -webkit-border-radius: 7;
-  -moz-border-radius: 7;
-  border-radius: 7px;
-  font-family: Arial;
-  color: #ffffff;
-  font-size: 14px;
   background: #3498db;
+  border: none;
+  border-radius: 7px;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 14px;
+  margin: 5px 5px;
+  -moz-border-radius: 7;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  margin: 5px 5px;
-  border: none;
+  -webkit-border-radius: 7;
 }
-
 .btn:hover {
   background: #3cb0fd;
   text-decoration: none;
 }
-
 #loginCard {
   cursor: pointer;
 }
-#loginCard:hover{
+#loginCard:hover {
   background-color: aliceblue;
+}
+.company-description {
+  display: block;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
