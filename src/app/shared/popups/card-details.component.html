@@ -16,11 +16,13 @@
           </tr>
           <tr>
             <th scope="row">Tiny Url</th>
-            <td>{{cardData.tinyUrl}}</td>
+            <td title="{{tinyUrlBasePath}}{{cardData.tinyUrl}}">
+              <a href="{{tinyUrlBasePath}}{{cardData.tinyUrl}}" target="_blank">Click Me</a>
+            </td>
           </tr>
           <tr>
             <th scope="row">Detail Url</th>
-            <td><a target="_blank" href="{{cardData.detailUrl}}" >Cleck me!!</a></td>
+            <td><a target="_blank" href="{{cardData.detailUrl}}" >Cleck me</a></td>
           </tr>
           <tr>
             <th scope="row">Image Url</th>

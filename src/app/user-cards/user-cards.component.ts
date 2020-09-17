@@ -118,7 +118,12 @@ export class UserCardsComponent implements OnInit {
   }
 
   showDetails(selectedCardData: CardData): void {
-    this.simpleModalService.addModal(CardDetailsComponent, { title: selectedCardData.name, cardData: selectedCardData });
+    this.simpleModalService.addModal(CardDetailsComponent,
+      {
+        title: selectedCardData.name,
+        cardData: selectedCardData,
+        userContextUrl: this.loginUser.urlContext
+      });
   }
 
   todoInfo(): void{

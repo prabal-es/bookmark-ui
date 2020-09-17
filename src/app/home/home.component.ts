@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
   loginUser: UserData;
   longUrl: string;
   expireAt: number;
+  tinyUrlBasePath: string = environment.bookmark_service_api_url + '/tiny/';
   constructor(private readonly simpleModalService: SimpleModalService,
               private readonly userService: UserService,
               private readonly spinner: NgxSpinnerService,

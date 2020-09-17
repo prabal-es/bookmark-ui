@@ -14,6 +14,7 @@ import Swal from 'sweetalert2';
 import { CardService } from '../shared/services/card.service';
 import { Card, CardData } from '../shared/models/card';
 import { AddCardComponent } from '../shared/popups/add-card.component';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-users-group-details',
@@ -26,6 +27,7 @@ export class UsersGroupDetailsComponent implements OnInit {
   loginUser: UserData;
   group: GroupData;
   cards: CardData[];
+  tinyUrlBasePath: string;
   constructor(private readonly route: ActivatedRoute,
               private readonly loginService: LoginService,
               private readonly router: Router,
@@ -38,6 +40,7 @@ export class UsersGroupDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.subscribe = this.route.params.subscribe(params => {
       this.urlContext = params.urlContext;
+      this.tinyUrlBasePath = environment.bookmark_service_api_url + '/' + this.urlContext + '/';
    });
     this.loginService.currentUser.subscribe(loginUser => {
       this.loginUser = loginUser;

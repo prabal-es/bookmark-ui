@@ -55,8 +55,8 @@
                 <tbody>
                   <tr *ngFor="let tinyUrl of tinyUrls.data; index as i;">
                     <th scope="row">{{i + 1}}</th>
-                    <td>{{tinyUrl.tinyUrl}}</td>
-                    <td>{{tinyUrl.detailUrl}}</td>
+                    <td title="{{tinyUrlBasePath}}{{tinyUrl.tinyUrl}}"><a href="{{tinyUrlBasePath}}{{tinyUrl.tinyUrl}}" target="_blank">Click Me</a></td>
+                    <td title="{{tinyUrl.detailUrl}}"><a href="{{tinyUrl.detailUrl}}" target="_blank">Click Me</a></td>
                     <td>{{tinyUrl.createdAt | date:'medium' }}</td>
                     <td>{{tinyUrl.expireAt| date:'medium' }}</td>
                   </tr>
