@@ -1,0 +1,65 @@
+<div class="row mt-2">
+    <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+        <nav class="bd-links">
+            <div class="bd-toc-item">
+                <a class="bd-toc-link" [routerLink]="['/']">
+                    Tiny URL
+                </a>
+            </div>
+            <div class="bd-toc-item ">
+                <a class="bd-toc-link" [routerLink]="['/cards']">
+                    Cards
+                </a>
+            </div>
+            <div class="bd-toc-item  active bd-sidenav-active">
+                <a class="bd-toc-link" [routerLink]="['/groups']">
+                    Groups
+                </a>
+            </div>
+            <div class="bd-toc-item ">
+                <a class="bd-toc-link" [routerLink]="['/company-groups']">
+                    Company Groups
+                </a>
+            </div>
+            <div class="bd-toc-item" (click)="todoInfo()" style="cursor: pointer;">
+                <a class="bd-toc-link">
+                    Import/Export
+                </a>
+            </div>
+        </nav>
+    </div>
+    <main class="col-12 col-md-9 col-xl-10 mt-2">
+        <div>
+            <div class="form-row pb-2" style="border-bottom: 1px solid rgba(0,0,0,.1);"> 
+                <div class="col">
+                    <input title="Group title" class="form-control" [(ngModel)]="title"  maxlength="50" placeholder="Group title">
+                </div>
+                <div class="col">
+                    <input title="Group Details" class="form-control" [(ngModel)]="details" maxlength="500" placeholder="Group details">
+                </div>
+                <div class="col">
+                    <input title="Image URL" class="form-control" [(ngModel)]="imgUrl" maxlength="2083" placeholder="Image URL">
+                </div>
+
+                <div class="col">
+                    <button  class="btn btn-primary" (click)="generateGroup();" style="line-height: 18px;margin: 0;">Create</button>
+                </div>
+            </div>
+            <div class="row card-columns" style="column-gap: 0" *ngIf="groups">
+                <div class="col-md-6 col-xl-4" *ngFor="let group of groups.data">
+                    <div (click)="showGroupDetails(group)" style="cursor: pointer;" class="card mt-2 mb-2">
+                        <div class="card-body">
+                            <img class="col-sm-12 rounded-circle"
+                                style="height: 175px; width: 209px; display: block; margin-left: auto;margin-right: auto;"
+                                src="{{group.img}}" alt="Card image cap">
+                            <h5 class="card-title" style="text-align: center; margin-top: 15px;">{{group.name}}
+                            </h5>
+                            <div style="text-align: center; font-weight: 600;">{{group.description}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>

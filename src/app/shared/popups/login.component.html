@@ -1,0 +1,21 @@
+<div class="modal-content">
+    <div class="modal-header">
+      <h4>{{title || 'Alert!'}}</h4>
+    </div>
+    <div class="modal-body">
+
+      <div class="row card-columns" style="column-gap: 0" *ngIf="users">
+        <div class="col-md-4 col-xl-4 pl-2 pr-2" *ngFor="let user of users.data">
+          <div class="card mt-2 mb-2">
+            <div (click)="onLogin(user);" id="loginCard" class="card-body">
+              <img class="col-sm-12 rounded-circle" style="height: 90px;width: 120px;display: block;margin-left: auto;margin-right: auto;" src="{{user.img}}" alt="Card image cap" />
+              <div class="card-title" style="text-align: center;margin-top: 5px;margin-bottom: 0;">
+                <a  >{{user.name}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</div>

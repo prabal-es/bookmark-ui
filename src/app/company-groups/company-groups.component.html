@@ -1,0 +1,40 @@
+<div class="row mt-2">
+    <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+        <nav class="bd-links">
+            <div class="bd-toc-item">
+                <a class="bd-toc-link" [routerLink]="['/companies/', urlContext]">
+                    Details
+                </a>
+            </div>
+            <div class="bd-toc-item">
+                <a class="bd-toc-link" [routerLink]="['/companies/', urlContext, 'users']">
+                    Users
+                </a>
+            </div>
+            <div class="bd-toc-item active bd-sidenav-active">
+                <a class="bd-toc-link" [routerLink]="['/companies/', urlContext, 'groups']">
+                    Groups
+                </a>
+            </div>
+        </nav>
+    </div>
+    <main class="col-12 col-md-9 col-xl-10">
+        <div>
+            <div class="row card-columns" style="column-gap: 0" *ngIf="companyGroup">
+                <div class="col-md-6 col-xl-4" *ngFor="let group of companyGroup.data">
+                    <div class="card mt-2 mb-2">
+                        <div class="card-body">
+                            <img class="col-sm-12 rounded-circle"
+                                style="height: 175px; width: 209px; display: block; margin-left: auto;margin-right: auto;"
+                                src="{{group.img}}" alt="Card image cap">
+                            <h5 class="card-title" style="text-align: center; margin-top: 15px;">{{group.name}}
+                            </h5>
+                            <div style="text-align: center; font-weight: 600;">{{group.description}}</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>

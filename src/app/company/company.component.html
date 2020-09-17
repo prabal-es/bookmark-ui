@@ -1,0 +1,21 @@
+<div class="row mt-2">
+    <main class="col-12">
+        <div class="card-columns" *ngIf="companies">
+            <div class="card" *ngFor="let company of companies.data">
+                <img class="card-img-top"
+                    src="{{company.img}}"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{ company.name }}</h5>
+                    <p class="card-text" style="display: block;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;" title="{{ company.description }}">{{ company.description }}</p>
+                    <a [routerLink]="['/companies', company.urlContext]" [ngClass]="{'disabled': !company.active}" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

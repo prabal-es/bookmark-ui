@@ -1,0 +1,47 @@
+<div class="modal-content">
+    <div class="modal-header">
+      <h4>{{title || 'Alert!'}}</h4>
+    </div>
+    <div class="modal-body">
+
+      <table class="table table-striped">
+        <tbody>
+          <tr>
+            <th scope="row">Title</th>
+            <td>{{cardData.name}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Details</th>
+            <td>{{cardData.description}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Tiny Url</th>
+            <td title="{{tinyUrlBasePath}}{{cardData.tinyUrl}}">
+              <a href="{{tinyUrlBasePath}}{{cardData.tinyUrl}}" target="_blank">Click Me</a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Detail Url</th>
+            <td><a target="_blank" href="{{cardData.detailUrl}}" >Cleck me</a></td>
+          </tr>
+          <tr>
+            <th scope="row">Image Url</th>
+            <td ><img width="150px" src="{{cardData.img}}" /></td>
+          </tr>
+          <tr>
+            <th scope="row" style="width: 110px;">Created On</th>
+            <td>{{cardData.createdAt | date:'medium'}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Expire At</th>
+            <td>{{cardData.expireAt | date:'medium'}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="modal-footer">
+      <button (click)="close()" class="btn btn-primary">Close</button>
+    </div>
+</div>
