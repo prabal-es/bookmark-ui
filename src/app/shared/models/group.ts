@@ -1,4 +1,5 @@
 import { UserData } from './user';
+import { CardData } from './card';
 
 export class GroupData {
     uuid: string;
@@ -8,6 +9,7 @@ export class GroupData {
     img: string;
     active: boolean;
     adminUsers: UserData[];
+    cards: CardData[];
 }
 
 export class Group {

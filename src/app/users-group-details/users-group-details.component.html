@@ -49,13 +49,21 @@
                     <button  class="btn btn-primary" (click)="addUser();"  style="line-height: 18px;margin-top: 9px;">Add admin</button>
                 </div>
                 <div class="col col-xl-2" style="max-width: 125px;">
-                    <button  class="btn btn-primary" (click)="todoInfo();"  style="line-height: 18px;margin-top: 9px;">Add cards</button>
+                    <button  class="btn btn-primary" (click)="addCard();"  style="line-height: 18px;margin-top: 9px;">Add cards</button>
                 </div>
             </div>
             <div class="row card-columns" style="column-gap: 0" *ngIf="group">
-
-
-            </div>
+                <div class="col-md-4 col-xl-3 pl-2 pr-2" *ngFor="let card of group.cards">
+                  <div class="card mt-2 mb-2">
+                    <div class="card-body">
+                      <img class="col-sm-12 rounded-circle" style="height: 90px;width: 120px;display: block;margin-left: auto;margin-right: auto;" src="{{card.img}}" alt="Card image cap" />
+                      <div class="card-title" style="text-align: center;margin-top: 5px;margin-bottom: 0;">
+                        <a  >{{card.name}}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
     </main>
 </div>

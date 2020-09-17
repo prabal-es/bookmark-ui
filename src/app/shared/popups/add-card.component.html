@@ -1,0 +1,31 @@
+<div class="modal-content">
+    <div class="modal-header">
+      <h4>{{title || 'Alert!'}}</h4>
+    </div>
+    <div class="modal-body">
+
+      <div class="row card-columns" style="column-gap: 0" *ngIf="cards">
+        <div class="col-md-4 col-xl-4 pl-2 pr-2" *ngFor="let card of cards">
+          <div class="card mt-2 mb-2">
+            <div class="card-body">
+              <img class="col-sm-12 rounded-circle" style="height: 90px;width: 120px;display: block;margin-left: auto;margin-right: auto;" src="{{card.img}}" alt="Card image cap" />
+              <div class="card-title" style="text-align: center;margin-top: 5px;margin-bottom: 0;">
+                <a  >{{card.name}}</a>
+              </div>
+              <div style="text-align: center; font-weight: 600;">Selected: 
+                <label class="switch">
+                  <input type="checkbox" value="card.uuid" [checked]="test(card.uuid)" (change)="onCheckboxChange(card.uuid, $event)">
+                  <span class="slider round"></span>
+                </label> 
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="modal-footer">
+      <button (click)="update()" class="btn btn-primary">Save</button>
+    </div>
+</div>

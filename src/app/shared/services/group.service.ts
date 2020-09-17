@@ -50,4 +50,8 @@ export class GroupService {
     updateGroupAdmins(urlContext: string, adminIds: string[]): Observable<GroupData>{
         return this.http.post<GroupData>(this.GROUP + '/' + urlContext + '/users', adminIds);
     }
+
+    updateGroupCards(urlContext: string, cardIds: string[]): Observable<GroupData>{
+        return this.http.post<GroupData>(this.GROUP + '/' + urlContext + '/cards', cardIds);
+    }
 }

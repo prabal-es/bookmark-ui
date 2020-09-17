@@ -25,6 +25,7 @@ import { CardDetailsComponent } from './shared/popups/card-details.component';
 import { GroupService } from './shared/services/group.service';
 import { UsersGroupDetailsComponent } from './users-group-details/users-group-details.component';
 import { AddUserComponent } from './shared/popups/add-user.component';
+import { AddCardComponent } from './shared/popups/add-card.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AddUserComponent } from './shared/popups/add-user.component';
     HomeComponent,
     LoginComponent,
     AddUserComponent,
+    AddCardComponent,
     CardDetailsComponent,
     UserCardsComponent,
     UserGroupsComponent,

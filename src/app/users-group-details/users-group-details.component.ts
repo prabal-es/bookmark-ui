@@ -11,6 +11,9 @@ import { AddUserComponent } from '../shared/popups/add-user.component';
 import { SimpleModalService } from 'ngx-simple-modal';
 import { UserService } from '../shared/services/user.service';
 import Swal from 'sweetalert2';
+import { CardService } from '../shared/services/card.service';
+import { Card, CardData } from '../shared/models/card';
+import { AddCardComponent } from '../shared/popups/add-card.component';
 
 @Component({
   selector: 'app-users-group-details',
@@ -22,11 +25,13 @@ export class UsersGroupDetailsComponent implements OnInit {
   private subscribe: Subscription;
   loginUser: UserData;
   group: GroupData;
+  cards: CardData[];
   constructor(private readonly route: ActivatedRoute,
               private readonly loginService: LoginService,
               private readonly router: Router,
               private readonly spinner: NgxSpinnerService,
               private readonly groupService: GroupService,
+              private readonly cardService: CardService,
               private readonly simpleModalService: SimpleModalService,
               private readonly userService: UserService) { }
 
@@ -42,6 +47,27 @@ export class UsersGroupDetailsComponent implements OnInit {
         this.router.navigate(['/']);
       }
     });
+  }
+
+  getCardsOfTypeCard(userUrlContext: string, companyUrlContext: string): void {
+    this.spinner.show();
+    this.cardService.getCardsOfTypeCard(userUrlContext, companyUrlContext).
+      pipe(
+        map((data: Card) => {
+          this.spinner.hide();
+          return data;
+        }), catchError(error => {
+          this.spinner.hide();
+          return throwError(error);
+        })
+      ).subscribe((card: Card) => {
+        this.cards = card.data;
+        this.simpleModalService.addModal(AddCardComponent,
+          { title: 'Added card', cards: this.cards, group: this.group})
+          .subscribe((isConfirmed) => {
+            this.getGroupDetails();
+          });
+      });
   }
 
   addUser(): void {
@@ -80,8 +106,12 @@ export class UsersGroupDetailsComponent implements OnInit {
     });
   }
 
-  todoInfo(): void{
-    Swal.fire('Information', 'This feature is planned in near future.', 'info');
+  addCard(): void{
+    // Swal.fire('Information', 'This feature is planned in near future.', 'info');
+    this.getCardsOfTypeCard(this.loginUser.urlContext, this.loginUser.companyUrlContext);
   }
 
+  todoInfo(): void{
+    this.getCardsOfTypeCard(this.loginUser.urlContext, this.loginUser.companyUrlContext);
+  }
 }
