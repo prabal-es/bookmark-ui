@@ -1,4 +1,4 @@
-# BookmarkUi
+# Bookmark UI [![CircleCI](https://circleci.com/gh/prabal-es/bookmark-ui.svg?style=svg&circle-token=54f45edb21d8d668f10df070d14b7dc742543691)](https://circleci.com/gh/prabal-es/bookmark-ui) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a42ad2db589c4aa8b6156a74da765ffe)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prabal-es/bookmark-ui&amp;utm_campaign=Badge_Grade) [![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)](https://bookmark-9.herokuapp.com)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
 
