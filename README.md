@@ -1,7 +1,7 @@
 # Bookmark UI [![CircleCI](https://circleci.com/gh/prabal-es/bookmark-ui.svg?style=svg&circle-token=54f45edb21d8d668f10df070d14b7dc742543691)](https://circleci.com/gh/prabal-es/bookmark-ui) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a42ad2db589c4aa8b6156a74da765ffe)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prabal-es/bookmark-ui&amp;utm_campaign=Badge_Grade) [![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)](https://bookmark-9.herokuapp.com)
 
 
-With bookmark ui, you can save favorite webpages, tinify URL, share-it, manage-it and navigate to them in seconds from anywhere. Using bookmark-servive --
+With bookmark ui, you can save favorite webpages, tinify URL, share-it, manage-it and navigate to them in seconds from anywhere. Using bookmark-ui --
 - User will generate short URLs which will expire after a standard default timespan. User will also be able to specify the expiration date. This will help us solve the problem of - generating tiny URLs quickly and sharing it with others.
 - User will be able to create cards representing the url where each card has a short title, brief description and a customizable picture. Default picture would be the favicon of the serving application.
 - User will be able to group cards in terms of tribes, feature teams, platforms or application. This would be like a catalog. User will be able to share the group urls.
@@ -36,37 +36,37 @@ npm start
 
 ## UI Flow:
 - Login screen: Users can ligin as 'Prabal', 'Anshu' or 'Anand' by clicking on it.
-![login user](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/login_user.png?raw=true)
+![login user](https://github.com/prabal-es/bookmark-ui/blob/development/.github/docs/login_user.png?raw=true)
 
 - Home scree[Tiny URLs] is showing the list of Tiny URL created by selected user and user can add more URL also by putting details.
-![tiny_details](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/tiny_details.png?raw=true)
+![tiny_details](https://github.com/prabal-es/bookmark-ui/blob/development/.github/docs/tiny_details.png?raw=true)
 
 - Card screen is showing the list of cards created by selected user and user can add more cards also by putting details.
-![card_list](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/card_list.png?raw=true)
+![card_list](https://github.com/prabal-es/bookmark-ui/blob/development/.github/docs/card_list.png?raw=true)
 
 - Card details popup is showing the details of the cards.
-![card_details](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/card_details.png?raw=true)
+![card_details](https://github.com/prabal-es/bookmark-ui/blob/development/.github/docs/card_details.png?raw=true)
 
 - Group screen is showing the list of groups created by selected user and user can add more cards also by putting details.
-![group_list](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/group_list.png?raw=true)
+![group_list](https://github.com/prabal-es/bookmark-ui/blob/development/.github/docs/group_list.png?raw=true)
 
 - Group details is showing the list of cards in that group.
-![group_details](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/group_details.png?raw=true)
+![group_details](https://github.com/prabal-es/bookmark-ui/blob/development/.github/docs/group_details.png?raw=true)
 
 - Group details admin pop is showing the list of admin users of that group. User can add or remove admins also
-![group_details_admin](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/group_details_admin.png?raw=true)
+![group_details_admin](https://github.com/prabal-es/bookmark-ui/blob/development/.github/docs/group_details_admin.png?raw=true)
 
 - Group details card pop is showing the list of user cards that can be added or removed from the group.
-![group_details_cards](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/group_details_cards.png?raw=true)
+![group_details_cards](https://github.com/prabal-es/bookmark-ui/blob/development/.github/docs/group_details_cards.png?raw=true)
 
 - Company group will show all the groups in the company.
-![company_groups](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/company_groups.png?raw=true)
+![company_groups](https://github.com/prabal-es/bookmark-ui/blob/development/.github/docs/company_groups.png?raw=true)
 
 - User can see the list of companies by clicking on `company` link
-![company_list](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/company_list.png?raw=true)
+![company_list](https://github.com/prabal-es/bookmark-ui/blob/development/.github/docs/company_list.png?raw=true)
 
 - User can see the details of the company by clicking on details button. User can also see the list of users and groups which are part of current company.
-![company_details](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/company_details.png?raw=true)
+![company_details](https://github.com/prabal-es/bookmark-ui/blob/development/.github/docs/company_details.png?raw=true)
 
 > All he screens are responsive and tested on laptop and mobile [horizontal and vertical].
 > Company group view, suggestion and update and import/export is in progress.
