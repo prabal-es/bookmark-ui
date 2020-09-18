@@ -24,3 +24,72 @@ npm start
 
 ```
 You can then access bookmark-ui here: [bookmark-ui](http://localhost:4200)
+
+> **Note**: Server is point to `https://bookmark-service-9.herokuapp.com/api/v1/swagger-ui.html` 
+If you want to change the pointing serve then update the `.\src\environments\environment.prod.ts` line numer 3 `bookmark_service_api_url` 
+and again build it and run. Example:
+```
+npm run prod-build
+
+npm start
+```
+
+## UI Flow:
+- Login screen: Users can ligin as 'Prabal', 'Anshu' or 'Anand' by clicking on it.
+![login user](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/login_user.png?raw=true)
+
+- Home scree[Tiny URLs] is showing the list of Tiny URL created by selected user and user can add more URL also by putting details.
+![tiny_details](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/tiny_details.png?raw=true)
+
+- Card screen is showing the list of cards created by selected user and user can add more cards also by putting details.
+![card_list](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/card_list.png?raw=true)
+
+- Card details popup is showing the details of the cards.
+![card_details](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/card_details.png?raw=true)
+
+- Group screen is showing the list of groups created by selected user and user can add more cards also by putting details.
+![group_list](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/group_list.png?raw=true)
+
+- Group details is showing the list of cards in that group.
+![group_details](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/group_details.png?raw=true)
+
+- Group details admin pop is showing the list of admin users of that group. User can add or remove admins also
+![group_details_admin](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/group_details_admin.png?raw=true)
+
+- Group details card pop is showing the list of user cards that can be added or removed from the group.
+![group_details_cards](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/group_details_cards.png?raw=true)
+
+- Company group will show all the groups in the company.
+![company_groups](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/company_groups.png?raw=true)
+
+- User can see the list of companies by clicking on `company` link
+![company_list](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/company_list.png?raw=true)
+
+- User can see the details of the company by clicking on details button. User can also see the list of users and groups which are part of current company.
+![company_details](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/company_details.png?raw=true)
+
+> All he screens are responsive and tested on laptop and mobile [horizontal and vertical].
+> Company group view, suggestion and update and import/export is in progress.
+
+
+
+
+## Running application details: 
+- **URL**: https://bookmark-9.herokuapp.com/
+- **CircleCI URL**: https://app.circleci.com/pipelines/github/prabal-es/bookmark-ui
+- **Codacy URL**: https://app.codacy.com/manual/prabal-es/bookmark-ui/dashboard
+- **Heroku URL**: https://dashboard.heroku.com/apps/bookmark-9
+- **Build Packages**: https://github.com/prabal-es/bookmark-ui/packages/
+- Dependent backend project GitHub URL[**Bookmark Service**]: https://github.com/prabal-es/bookmark-service
+- Dependent backend project **running** link: https://bookmark-service-9.herokuapp.com/api/v1/swagger-ui.html
+- *Clickup URL** [For story traking]: https://app.clickup.com/3319214/v/l/359de-18?pr=3327372
+
+> Note: Heroku Dyno shutdown if not in use. So First time when you hit the running app it will take longer time but once the Dyno starts it will run fine.
+
+## Improvment:
+> Public group card update and display
+> Import and export of cards.
+> Aline with widgets.
+
+
+  
