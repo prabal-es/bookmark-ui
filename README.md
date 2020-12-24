@@ -1,4 +1,4 @@
-# Bookmark UI [![CircleCI](https://circleci.com/gh/prabal-es/bookmark-ui.svg?style=svg&circle-token=54f45edb21d8d668f10df070d14b7dc742543691)](https://circleci.com/gh/prabal-es/bookmark-ui) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/a42ad2db589c4aa8b6156a74da765ffe)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prabal-es/bookmark-ui&amp;utm_campaign=Badge_Grade) [![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge)](https://bookmark-9.herokuapp.com)
+# Bookmark UI [![CircleCI](https://circleci.com/gh/prabal-es/bookmark-ui.svg?style=svg&circle-token=54f45edb21d8d668f10df070d14b7dc742543691)](https://circleci.com/gh/prabal-es/bookmark-ui) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/fbfa9270ced943c39b04b6c92a0a9ac5)](https://www.codacy.com/manual/prabal-es/bookmark-ui/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prabal-es/bookmark-ui&amp;utm_campaign=Badge_Grade) [![Heroku](https://github.com/prabal-es/bookmark-service/blob/development/.github/docs/heroku-deployed-green.svg?raw=true)](https://bookmark-9.herokuapp.com)
 
 
 With bookmark ui, you can save favorite webpages, tinify URL, share-it, manage-it and navigate to them in seconds from anywhere. Using bookmark-ui --
@@ -82,7 +82,7 @@ npm start
 - **Build Packages**: https://github.com/prabal-es/bookmark-ui/packages/
 - Dependent backend project GitHub URL[**Bookmark Service**]: https://github.com/prabal-es/bookmark-service
 - Dependent backend project **running** link: https://bookmark-service-9.herokuapp.com/api/v1/swagger-ui.html
-- *Clickup URL** [For story traking]: https://app.clickup.com/3319214/v/l/359de-18?pr=3327372
+- **Clickup URL** [For story traking]: https://app.clickup.com/3319214/v/l/359de-18?pr=3327372
 
 > Note: Heroku Dyno shutdown if not in use. So First time when you hit the running app it will take longer time but once the Dyno starts it will run fine.
 
